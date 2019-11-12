@@ -33,4 +33,15 @@ public class RegrasNegocioGado {
 		}
 		
 	}
+	public void atualizarGado(Gado gado) throws ExceptionGadoNaoExiste {
+		if (gados.existeGado(gado.getBrinco())) {
+			gados.atualizarGado(gado);
+		} else {
+			throw new ExceptionGadoNaoExiste();
+		}
+		
+	}
+	
+	
+	
 }
