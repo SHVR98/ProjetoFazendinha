@@ -7,7 +7,7 @@ public void cadastrar(Gado gado) throws ExceptionGadoJaCadastrado {
 		
 	}
 	else {
-	//chamar Excecao
+	throw new ExceptionGadoJaCadastrado();
 	}
 }
 }
