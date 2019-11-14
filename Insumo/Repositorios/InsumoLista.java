@@ -70,11 +70,29 @@ public class InsumoLista implements RepositorioInsumos
 		}		
 		return resposta;
 	}
+
+	public Insumo Listar() // Pedir verificação do Listar
+	{
+		Insumo resposta = null;
+		if(this.insumo==null)
+		{
+			resposta = null;
+		}
+		else
+		{
+			while(this.insumo!=null)
+			{
+				resposta = this.insumo;
+				this.proximo.Listar();
+			}
+		}
+		return resposta;
+	}
 	
 	public Insumo Procurar(String item) // Procurando elemento da lista
 	{
 		Insumo elemento = null;
-		if(this.insumo!=null && this.insumo.getNome()==item)
+		if(this.insumo!=null)
 		{
 			elemento = this.insumo;
 		}

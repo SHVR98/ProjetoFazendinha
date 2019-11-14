@@ -1,4 +1,5 @@
 package ClassesBases;
+
 public class Insumo
 {
 	private String nome;	// Nome do item a ser Utilizado

@@ -32,18 +32,13 @@ public class InsumoArray implements RepositorioInsumos
 	{
 		for(int i=0; i<array.length; i++)
 		{
-			if(this.array[i].getNome()==insumo.getNome()){
-				for(int j = i+1; j < array.length;j++) {
-					if(j == array.length-1) {
-						array[j] = null;
-					}
-					array[j-1] = array[j];
-				}
+			if(this.array[i].getNome()==insumo.getNome())
+			{
+				
 			}
 		}
 		return null;
 	}
-
 
 	public String Alterar(Insumo insumo)  // alterando caso o item seja encontrado
 	{
@@ -86,4 +81,12 @@ public class InsumoArray implements RepositorioInsumos
 		}
 		return resposta;
 	}
+
+	public Insumo Listar() 
+	{
+		
+		
+		return null;
+	}
+
 }
