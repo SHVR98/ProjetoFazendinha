@@ -7,17 +7,22 @@ public class RepositorioGadosArray implements RepositorioGado {
 	private int indice;
 
 	public RepositorioGadosArray(int tamanho) {
-		gados = new Gado[tamanho];
+		gados = new Gado[1];
+		this.indice=0;
 	}
 
-	public void inserirGado(Gado gado) {
-		for (int a = 0; a < gados.length; a++) {
-			if (gados[a] == null) {
-				gados[a] = gado;
-				a = gados.length + 1;
+	public void Inserir(Gado gado) 
+		if(indice == gados.length)
+		{
+			Gado[] arrayArmazenar = new Gado[indice+1];
+			for(int i=0; i<gados.length; i++)
+			{
+				arrayArmazenar[i] = gados[i];
 			}
+			this.gados=arrayArmazenar;
 		}
-
+		this.gados[indice] = gado;
+		indice++;
 	}
 
 	public void removerGado(String brinco) {
