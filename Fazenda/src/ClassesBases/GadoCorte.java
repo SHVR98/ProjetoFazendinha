@@ -1,6 +1,6 @@
 package ClassesBases;
 
-public class GadoCorte extends Gado{
+public class GadoCorte extends Gado {
 	public GadoCorte(String brinco, char genero, String raca, boolean vacina, int anoNascimento) {
 		super(brinco, genero, raca, vacina, anoNascimento);
 	}

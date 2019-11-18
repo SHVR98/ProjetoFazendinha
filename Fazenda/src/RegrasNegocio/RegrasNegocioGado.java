@@ -3,7 +3,7 @@ package RegrasNegocio;
 import ClassesBases.Gado;
 import Exceptions.ExceptionGadoJaCadastrado;
 import Exceptions.ExceptionGadoNaoExiste;
-import Reposiorios.RepositorioGado;
+import Repositorios.RepositorioGado;
 
 public class RegrasNegocioGado {
 	private RepositorioGado gados;
@@ -31,17 +31,16 @@ public class RegrasNegocioGado {
 		} else {
 			throw new ExceptionGadoNaoExiste();
 		}
-		
+
 	}
+
 	public void atualizarGado(Gado gado) throws ExceptionGadoNaoExiste {
 		if (gados.existeGado(gado.getBrinco())) {
 			gados.atualizarGado(gado);
 		} else {
 			throw new ExceptionGadoNaoExiste();
 		}
-		
+
 	}
-	
-	
-	
+
 }
