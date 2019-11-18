@@ -2,15 +2,21 @@ package Fachada;
 
 import RegrasNegocio.*;
 import ClassesBases.*;
+import Exceptions.CultivoCadastradoException;
 import Exceptions.ExceptionGadoJaCadastrado;
 import Exceptions.ExceptionGadoNaoExiste;
+import Exceptions.FuncionarioJaCadastradoException;
+import Exceptions.FuncionarioNaoEncontradoException;
 import Exceptions.InsumoJaCadastradoException;
 import Exceptions.InsumoNaoCadastradoException;
 
 public class FachadaFazenda {
 	RegrasNegocioGado gados;
 	CadastroInsumo insumos;
-	// regra de negocio da classe gado
+	RegrasNegocioFuncionario funcionarios;
+	FachadaNegocioCultivo cultivos;
+
+	// Gado
 	public void cadastrarGado(Gado gado) throws ExceptionGadoJaCadastrado {
 		gados.cadastrarGado(gado);
 	}
@@ -28,7 +34,8 @@ public class FachadaFazenda {
 		gados.atualizarGado(gado);
 
 	}
-	// Regra de negocio da classe insumo
+
+	// Insumo
 	public void inserirInsumo(Insumo insumo) throws InsumoJaCadastradoException {
 		insumos.inserirInsumo(insumo);
 	}
@@ -38,12 +45,47 @@ public class FachadaFazenda {
 		insumos.removerInsumo(insumo);
 
 	}
-	
+
 	public Insumo procurarInsumo(String item) throws InsumoNaoCadastradoException {
 		return insumos.procurarInsumo(item);
 	}
+
 	public void alterarInsumo(Insumo insumo) throws InsumoNaoCadastradoException {
 		insumos.alterarInsumo(insumo);
+	}
+
+	// Funcionario
+	public void inserir(Funcionario funcionario) throws FuncionarioJaCadastradoException {
+		funcionarios.inserir(funcionario);
+	}
+
+	public void atualizar(Funcionario funcionario) throws FuncionarioNaoEncontradoException {
+		funcionarios.atualizar(funcionario);
+	}
+
+	public void remover(Funcionario funcionario) throws FuncionarioNaoEncontradoException {
+		funcionarios.remover(funcionario);
+	}
+
+	public void procurar(String nome) throws FuncionarioNaoEncontradoException {
+		funcionarios.procurar(nome);
+	}
+
+	// Cultivo
+	public void Inserir(Cultivo cultivo) throws CultivoCadastradoException {
+		cultivos.Inserir(cultivo);
+	}
+
+	public void Remover(Cultivo cultivo) throws CultivoCadastradoException {
+		cultivos.Remover(cultivo);
+	}
+
+	public Cultivo Procurar(String produto) throws CultivoCadastradoException {
+		return cultivos.Procurar(produto);
+	}
+
+	public String Alterar(Cultivo cultivo) throws CultivoCadastradoException {
+		return cultivos.Alterar(cultivo);
 	}
 
 }
