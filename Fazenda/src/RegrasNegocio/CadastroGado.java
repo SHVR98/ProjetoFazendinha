@@ -7,7 +7,9 @@ import Repositorios.RepositorioGados;
 
 public class CadastroGado {
 	private RepositorioGados gados;
-	public int quantidadeGados=0;
+	
+	public int quantidadeGados = 0;
+	
 	public  CadastroGado(RepositorioGados repositorioGados) {
 		this.gados= repositorioGados;
 	}

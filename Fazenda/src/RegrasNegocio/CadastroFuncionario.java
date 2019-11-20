@@ -3,23 +3,29 @@ package RegrasNegocio;
 import ClassesBase.Funcionario;
 import Exceptions.FuncionarioJaCadastradoException;
 import Exceptions.FuncionarioNaoEncontradoException;
+import Exceptions.SalarioInvalidoException;
 import Repositorios.RepositorioFuncionarios;
 
 public class CadastroFuncionario {
 	private RepositorioFuncionarios funcionarios;
-	public int  quantidadeFuncionarios=0;;
+	
+	public int quantidadeFuncionarios = 0;
 
 	public  CadastroFuncionario(RepositorioFuncionarios repositorioFuncionarios) {
 		this.funcionarios = repositorioFuncionarios;
 	}
 
-	public void inserirFuncionario(Funcionario funcionario) throws FuncionarioJaCadastradoException {
+	public void inserirFuncionario(Funcionario funcionario) throws FuncionarioJaCadastradoException, SalarioInvalidoException {
 		if (funcionarios.existeFuncionario(funcionario.getNome())) {
 			throw new FuncionarioJaCadastradoException();
 		} else {
-			funcionarios.inserirFuncionario(funcionario);
-			quantidadeFuncionarios++;
-			
+			if(funcionario.getSalario() <= 0) {
+				throw new SalarioInvalidoException();
+			}
+			else {
+				funcionarios.inserirFuncionario(funcionario);
+				quantidadeFuncionarios++;
+			}
 		}
 	}
 
