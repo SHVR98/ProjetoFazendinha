@@ -1,4 +1,4 @@
-package ClassesBases;
+package ClassesBase;
 
 public abstract class Gado {
 

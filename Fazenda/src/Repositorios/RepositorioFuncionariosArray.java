@@ -1,8 +1,8 @@
 package Repositorios;
 
-import ClassesBases.Funcionario;
+import ClassesBase.Funcionario;
 
-class RepositorioFuncionariosArray implements RepositorioFuncionarios{
+public class RepositorioFuncionariosArray implements RepositorioFuncionarios{
 	private Funcionario[] funcionarios;
 	private int indice;
 	
@@ -12,13 +12,13 @@ class RepositorioFuncionariosArray implements RepositorioFuncionarios{
 	}
 
 	@Override
-	public void inserir(Funcionario funcionario) {
+	public void inserirFuncionario(Funcionario funcionario) {
 		funcionarios[indice] = funcionario;
 		indice = indice++;
 	}
 
 	@Override
-	public void atualizar(Funcionario funcionario) {
+	public void atualizarFuncionario(Funcionario funcionario) {
 		int indice = this.getIndice(funcionario.getNome());
 		
 		if(indice != this.indice) {
@@ -28,7 +28,7 @@ class RepositorioFuncionariosArray implements RepositorioFuncionarios{
 	}
 
 	@Override
-	public void remover(String nome) {
+	public void removerFuncionario(String nome) {
 		int indice = this.getIndice(nome);
 		
 		if(indice != this.indice) {
@@ -40,7 +40,7 @@ class RepositorioFuncionariosArray implements RepositorioFuncionarios{
 	}
 
 	@Override
-	public Funcionario procurar(String nome) {
+	public Funcionario procurarFuncionario(String nome) {
 		Funcionario resposta = null;
 		int indice = this.getIndice(nome);
 		
@@ -52,7 +52,7 @@ class RepositorioFuncionariosArray implements RepositorioFuncionarios{
 	}
 
 	@Override
-	public boolean existe(String nome) {
+	public boolean existeFuncionario(String nome) {
 		int resposta = this.getIndice(nome);
 		return (resposta != this.indice);
 	}

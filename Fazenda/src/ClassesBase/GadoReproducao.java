@@ -1,4 +1,4 @@
-package ClassesBases;
+package ClassesBase;
 
 public class GadoReproducao extends Gado {
 	public GadoReproducao(String brinco, char genero, String raca, boolean vacina, int anoNascimento) {
@@ -6,13 +6,13 @@ public class GadoReproducao extends Gado {
 		// TODO Auto-generated constructor stub
 	}
 
-	private int concentracaoMl;
+	private String fertilidade;
 
-	public int getConcentracaoMl() {
-		return this.concentracaoMl;
+	public String getFertilidade() {
+		return this.fertilidade;
 	}
 
-	public void setConcentracaoMl(int concentracaoMl) {
-		this.concentracaoMl = concentracaoMl;
+	public void setFertilidade(String fertilidade) {
+		this.fertilidade = fertilidade;
 	}
 }

@@ -1,6 +1,6 @@
 package RegrasNegocio;
 
-import ClassesBases.Cultivo;
+import ClassesBase.Cultivo;
 import Repositorios.*;
 import Exceptions.*;
 

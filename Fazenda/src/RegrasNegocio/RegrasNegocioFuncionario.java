@@ -7,13 +7,14 @@ import Repositorios.RepositorioFuncionarios;
 
 public class RegrasNegocioFuncionario {
 	private RepositorioFuncionarios funcionarios;
-	
+	public int quantidadeFuncionarios =0;
 	public void inserir(Funcionario funcionario) throws FuncionarioJaCadastradoException {
 		if(funcionarios.existe(funcionario.getNome())) {
 			throw new FuncionarioJaCadastradoException();
 		}
 		else {
 			funcionarios.inserir(funcionario);
+			quantidadeFuncionarios++;
 		}
 	}
 	
@@ -32,6 +33,7 @@ public class RegrasNegocioFuncionario {
 		} 
 		else {
 			throw new FuncionarioNaoEncontradoException();
+			quantidadeFuncionarios--;
 		}
 	}
 	

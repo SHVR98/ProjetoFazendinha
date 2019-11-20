@@ -1,13 +1,13 @@
 package Repositorios;
 
-import ClassesBases.Funcionario;
+import ClassesBase.Funcionario;
 
 public interface RepositorioFuncionarios {
 	
-	public void inserir(Funcionario funcionario);
-	public void atualizar(Funcionario funcionario);
-	public void remover(String nome);
-	public Funcionario procurar(String nome);
-	public boolean existe(String nome);
+	public void inserirFuncionario(Funcionario funcionario);
+	public void atualizarFuncionario(Funcionario funcionario);
+	public void removerFuncionario(String nome);
+	public Funcionario procurarFuncionario(String nome);
+	public boolean existeFuncionario(String nome);
 	
 }

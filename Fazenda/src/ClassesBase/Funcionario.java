@@ -1,4 +1,4 @@
-package ClassesBases;
+package ClassesBase;
 
 public class Funcionario {
 	private String nome;
@@ -45,7 +45,4 @@ public class Funcionario {
 	public void setSalario(Double salario) {
 		this.salario = salario;
 	}
-	
-	
-	
 }

@@ -1,8 +1,8 @@
 package Repositorios;
 
-import ClassesBases.Gado;
+import ClassesBase.Gado;
 
-public class RepositorioGadosLista implements RepositorioGado {
+public class RepositorioGadosLista implements RepositorioGados {
 	private Gado gado;
 	private RepositorioGadosLista proximo;
 

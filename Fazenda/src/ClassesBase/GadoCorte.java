@@ -1,4 +1,4 @@
-package ClassesBases;
+package ClassesBase;
 
 public class GadoCorte extends Gado {
 	public GadoCorte(String brinco, char genero, String raca, boolean vacina, int anoNascimento) {

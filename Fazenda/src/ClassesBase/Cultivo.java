@@ -1,4 +1,4 @@
-package ClassesBases;
+package ClassesBase;
 
 public class Cultivo {
 
@@ -26,25 +26,25 @@ public class Cultivo {
 	public int getQuantidade(){
 		return quantidade;
 	}
-	public void setQuantidade() {
+	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
 	public boolean getControlePraga(){
 		return controlePraga;
 	}
-	public void setControlePraga() {
+	public void setControlePraga(boolean controlePraga) {
 		this.controlePraga = controlePraga;
 	}
 	public int getIrrigacao(){
 		return irrigacao;
 	}
-	public void setIrrigacaoe() {
+	public void setIrrigacao(int irrigacao) {
 		this.irrigacao = irrigacao;
 	}
 	public int getColheita(){
 		return colheita;
 	}
-	public void setColheita() {
+	public void setColheita(int colheita) {
 		this.colheita = colheita;
 	}
 

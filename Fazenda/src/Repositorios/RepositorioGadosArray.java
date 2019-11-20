@@ -1,8 +1,8 @@
 package Repositorios;
 
-import ClassesBases.Gado;
+import ClassesBase.Gado;
 
-public class RepositorioGadosArray implements RepositorioGado {
+public class RepositorioGadosArray implements RepositorioGados {
 	private Gado[] gados;
 	private int indice;
 
