@@ -35,11 +35,8 @@ public class InterfaceUsuario {
 		Insumo insumos = new Insumo(" ", 0);
 		Cultivo cultivos = new Cultivo(" ", 0, false, 0, 0);
 
-		// FachadaFazenda fachada = new FachadaFazenda(gadosRepArray,
-		// funcionariosRepArray, insumosRepArray, cultivosRepArray); // Inserindo em
-		// arrays
-		FachadaFazenda fachada = new FachadaFazenda(gadosRepLista, funcionariosRepLista, insumosRepLista,
-				cultivosRepLista);
+//		 FachadaFazenda fachada = new FachadaFazenda(gadosRepArray,funcionariosRepArray, insumosRepArray, cultivosRepArray); // Inserindo em arrays
+		FachadaFazenda fachada = new FachadaFazenda(gadosRepLista, funcionariosRepLista, insumosRepLista,cultivosRepLista);
 		while (continuar) {
 			System.out.println("Informe o que area da fazeznda deseja trabalhar:");
 			System.out.println("Gado de Corte - Gado de Reproducao - Funcionarios - Insumos - Cultivo");
@@ -52,7 +49,7 @@ public class InterfaceUsuario {
 				escolha = in.next();
 				if (escolha.equals("Inserir")) {
 					System.out.println(
-							"Insira brinco, genero, raca, vacina(sim / nao) , ano de nascimento e peso respectivamente");
+							"Insira brinco, genero, raca, vacina(Sim / Nao) , ano de nascimento e peso respectivamente");
 
 					gadoCorte.setBrinco(in.next());
 					gadoCorte.setGenero(in.next().charAt(0));
@@ -99,7 +96,7 @@ public class InterfaceUsuario {
 				} else if (escolha.equals("Alterar")) {
 
 					System.out.println(
-							"Insira brinco, g�nero, ra�a, vacina(sim / nao), ano de nascimento e pesorespectivamente");
+							"Insira brinco, genero, raca, vacina(Sim / Nao), ano de nascimento e peso respectivamente");
 					gadoCorte.setBrinco(in.next());
 					gadoCorte.setGenero(in.next().charAt(0));
 					gadoCorte.setRaca(in.next());
@@ -127,7 +124,7 @@ public class InterfaceUsuario {
 				escolha = in.next();
 				if (escolha.equals("Inserir")) {
 					System.out.println(
-							"Insira brinco, genero, raca, vacina(sim / nao), ano de nascimento e fertiidade (alta/baixa)respectivamente");
+							"Insira brinco, genero, raca, vacina(Sim / Nao), ano de nascimento e fertiidade(alta/baixa) respectivamente");
 
 					gadoReproducao.setBrinco(in.next());
 					gadoReproducao.setGenero(in.next().charAt(0));
@@ -175,7 +172,7 @@ public class InterfaceUsuario {
 				} else if (escolha.equals("Alterar")) {
 
 					System.out.println(
-							"Insira brinco, genero, raca, vacina(sim / nao), ano de nascimento e fertilidade(alta/baixa) respectivamente");
+							"Insira brinco, genero, raca, vacina(Sim / Nao), ano de nascimento e fertilidade(alta/baixa) respectivamente");
 					gadoCorte.setBrinco(in.next());
 					gadoCorte.setGenero(in.next().charAt(0));
 					gadoCorte.setRaca(in.next());
@@ -203,7 +200,7 @@ public class InterfaceUsuario {
 				System.out.println("Inserir - Remover - Procurar - Alterar");
 				escolha = in.next();
 				if (escolha.equals("Inserir")) {
-					System.out.println("Insira nome, contato, endere�o, fun�ao e sal�rio respectivamente");
+					System.out.println("Insira nome, contato, endereco, funcao e salario respectivamente");
 
 					funcionarios.setNome(in.next());
 					funcionarios.setContato(in.next());
@@ -227,7 +224,7 @@ public class InterfaceUsuario {
 						e.printStackTrace();
 					}
 				} else if (escolha.equals("Procurar")) {
-					System.out.println("Insira o nome do funcionario a ser procurar");
+					System.out.println("Insira o nome do funcionario a ser procurado");
 					String nome = in.next();
 
 					try {
@@ -253,11 +250,11 @@ public class InterfaceUsuario {
 				break;
 			}
 			case "Insumos": {
-				System.out.println("Informe o que deseja Fazer no gadoCorte");
+				System.out.println("Informe o que deseja fazer em insumos");
 				System.out.println("Inserir - Remover - Procurar - Alterar");
 				escolha = in.next();
 				if (escolha.equals("Inserir")) {
-					System.out.println("Informe item e quantidade para inser��o");
+					System.out.println("Informe item e quantidade para inserir");
 					insumos.setNome(in.next());
 					insumos.setQuantidade(in.nextInt());
 
@@ -286,7 +283,7 @@ public class InterfaceUsuario {
 						e.printStackTrace();
 					}
 				} else if (escolha.equals("Alterar")) {
-					System.out.println("Informe item e quantidade para inser��o");
+					System.out.println("Informe item e quantidade para inserir");
 					insumos.setNome(in.next());
 					insumos.setQuantidade(in.nextInt());
 					try {
@@ -299,12 +296,12 @@ public class InterfaceUsuario {
 				break;
 			}
 			case "Cultivo": {
-				System.out.println("Informe o que deseja Fazer no gadoCorte");
+				System.out.println("Informe o que deseja fazer em cultivo");
 				System.out.println("Inserir - Remover - Procurar - Alterar");
 				escolha = in.next();
 				if (escolha.equals("Inserir")) {
 					System.out.println(
-							"insira o  produto, quantidade, agrotoxico (Sim / N�o), irriga��o e colheita");
+							"Insira o  produto, quantidade, agrotoxico (Sim / Nao), irrigacao e colheita");
 					cultivos.setProduto(in.next());
 					cultivos.setQuantidade(in.nextInt());
 					String controlado = in.next();
@@ -322,7 +319,7 @@ public class InterfaceUsuario {
 						e.printStackTrace();
 					}
 				} else if (escolha.equals("Remover")) {
-					System.out.println("insira o  produto, quantidade, agrotoxico, irriga��o e colheita");
+					System.out.println("Insira o  produto, quantidade, agrotoxico(Sim/ Nao), irrigacao e colheita");
 					cultivos.setProduto(in.next());
 					cultivos.setQuantidade(in.nextInt());
 					String controlado = in.next();
