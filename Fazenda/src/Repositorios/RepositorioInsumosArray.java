@@ -7,7 +7,7 @@ public class RepositorioInsumosArray implements RepositorioInsumos
 	private Insumo[] array;
 	private int index;
 	
-	public void RepositorioInsumosArray()	// Lista padrão (Construtor)
+	public RepositorioInsumosArray()	// Lista padrão (Construtor)
 	{
 		this.array = new Insumo[1];
 		this.index = 0;

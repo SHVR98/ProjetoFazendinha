@@ -1,36 +1,33 @@
 package Fachada;
 
 import RegrasNegocio.*;
-
-import Repositorios.RepositorioCultivos;
-import Repositorios.RepositorioFuncionarios;
-import Repositorios.RepositorioGados;
-import Repositorios.RepositorioInsumos;
+import Repositorios.*;
 import ClassesBase.*;
 import Exceptions.*;
 
-
 public class FachadaFazenda {
-	RepositorioGados gados;
-	RepositorioFuncionarios funcionarios;
-	RepositorioInsumos insumos;
-	RepositorioCultivos cultivos;
-	
-	public FachadaFazenda(RepositorioGados respositorioGado, RepositorioFuncionarios repositorioFuncionarios, RepositorioInsumos repositorioInsumos, RepositorioCultivos repositorioCultivo){
-		//falta o bagui aqui, n lembro como é kkkk
-		this.gados = respositorioGado;
-		this.funcionarios = repositorioFuncionarios;
-		this.insumos = repositorioInsumos;
-		this.cultivos = repositorioCultivo;
+	private CadastroGado gados;
+	private CadastroFuncionario funcionarios;
+	private CadastroInsumo insumos;
+	private CadastroCultivo cultivos;
+
+	public FachadaFazenda(RepositorioGados respositorioGado, RepositorioFuncionarios repositorioFuncionario,
+			RepositorioInsumos repositorioInsumo, RepositorioCultivos repositorioCultivo) {
+		this.gados = new CadastroGado(respositorioGado);
+		this.funcionarios = new CadastroFuncionario(repositorioFuncionario);
+		this.insumos = new CadastroInsumo(repositorioInsumo);
+		this.cultivos = new CadastroCultivo(repositorioCultivo);
+
 	}
 
 	// GADO
-	public void cadastrarGado(Gado gado) throws GadoJaCadastradoException, MuitosGadosException{
-		if(funcionarios.quantidadeFuncionarios*10>gados.quantidadeGados) {
+	public void cadastrarGado(Gado gado) throws GadoJaCadastradoException, ExcessodeGadoException {
+		if(funcionarios.quantidadeFuncionarios*10>gados.quantidadeGados)
 		gados.inserirGado(gado);
+		else {
+			throw new ExcessodeGadoException();
 		}
-		else
-			throw new MuitosGadosException();
+		
 	}
 
 	public void removerGado(String brinco) throws GadoNaoExisteException {

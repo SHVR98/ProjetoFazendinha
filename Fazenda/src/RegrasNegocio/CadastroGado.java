@@ -7,11 +7,15 @@ import Repositorios.RepositorioGados;
 
 public class CadastroGado {
 	private RepositorioGados gados;
-
-	public void cadastrarGado(Gado gado) throws GadoJaCadastradoException {
+	public int quantidadeGados=0;
+	public  CadastroGado(RepositorioGados repositorioGados) {
+		this.gados= repositorioGados;
+	}
+	
+	public void inserirGado(Gado gado) throws GadoJaCadastradoException {
 		if (!gados.existeGado(gado.getBrinco())) {
 			gados.inserirGado(gado);
-
+			quantidadeGados++;
 		} else {
 			throw new GadoJaCadastradoException();
 		}
@@ -20,6 +24,7 @@ public class CadastroGado {
 	public void removerGado(String brinco) throws GadoNaoExisteException {
 		if (gados.existeGado(brinco)) {
 			gados.removerGado(brinco);
+			quantidadeGados--;
 		} else {
 			throw new GadoNaoExisteException();
 		}

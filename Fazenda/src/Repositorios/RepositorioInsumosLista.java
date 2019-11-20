@@ -6,7 +6,7 @@ public class RepositorioInsumosLista implements RepositorioInsumos
 	private Insumo insumo = new Insumo(null, 0); // puxando a classe insumo (gets e sets)
 	private RepositorioInsumosLista proximo;
 	
-	public void RepositorioInsumosLista() // Lista padrão
+	public  RepositorioInsumosLista() // Lista padrão
 	{
 		this.insumo = null;
 		this.proximo = null;

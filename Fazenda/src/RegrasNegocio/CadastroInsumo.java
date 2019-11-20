@@ -8,7 +8,10 @@ import Repositorios.RepositorioInsumos;
 public class CadastroInsumo // classse de regra de negocio
 {
 	private RepositorioInsumos insumos;
-
+	public CadastroInsumo(RepositorioInsumos repositorioInsumos)
+	{
+		this.insumos = repositorioInsumos;
+	}
 	public void inserirInsumo(Insumo insumo) throws InsumoJaCadastradoException {
 		if (insumos.existeInsumo(insumo.getNome())) {
 			throw new InsumoJaCadastradoException();

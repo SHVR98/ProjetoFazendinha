@@ -6,7 +6,10 @@ import Exceptions.*;
 
 public class CadastroCultivo {
 	private RepositorioCultivos cultivos;
-
+	public CadastroCultivo(RepositorioCultivos repositorioCultivos)
+	{
+		this.cultivos = repositorioCultivos;
+	}
 	public void inserirCultivo(Cultivo cultivo) throws CultivoJaCadastradoException {
 		if (cultivos.existeCultivo(cultivo.getProduto())) {
 			throw new CultivoJaCadastradoException();
