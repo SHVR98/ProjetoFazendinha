@@ -60,7 +60,7 @@ public class FachadaFazenda {
 	}
 
 	// FUNCIONARIO
-	public void inserirFuncionario(Funcionario funcionario) throws FuncionarioJaCadastradoException {
+	public void inserirFuncionario(Funcionario funcionario) throws FuncionarioJaCadastradoException, SalarioInvalidoException {
 		funcionarios.inserirFuncionario(funcionario);
 	}
 
