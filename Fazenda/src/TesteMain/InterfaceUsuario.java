@@ -104,6 +104,8 @@ public class InterfaceUsuario {
 					}
 
 				} else if (escolha.equals("Alterar")) {
+					System.out.println("Insira o brinco do gado que deseja alterar");
+					fachada.procurarGado(in.next());
 
 					System.out.println(
 							"Insira brinco, genero, raca, vacina(Sim / Nao), ano de nascimento e peso respectivamente");
@@ -188,7 +190,8 @@ public class InterfaceUsuario {
 					}
 
 				} else if (escolha.equals("Alterar")) {
-
+					System.out.println("Insira o brinco do gado que deseja alterar");
+					fachada.procurarGado(in.next());
 					System.out.println(
 							"Insira brinco, genero, raca, vacina(Sim / Nao), ano de nascimento e fertilidade(alta/baixa) respectivamente");
 					gadoCorte.setBrinco(in.next());
@@ -256,6 +259,8 @@ public class InterfaceUsuario {
 					}
 				} else if (escolha.equals("Alterar")) {
 					System.out.println("Insira o nome do funcionario que deseja alterar");
+					fachada.procurarFuncionario(in.next());
+					System.out.println("Insira nome, contato, endereco, funcao e salario respectivamente");
 					funcionarios.setNome(in.next());
 					funcionarios.setContato(in.next());
 					funcionarios.setEndereco(in.next());
@@ -308,7 +313,9 @@ public class InterfaceUsuario {
 						e.printStackTrace();
 					}
 				} else if (escolha.equals("Alterar")) {
-					System.out.println("Informe item e quantidade para inserir");
+					System.out.println("Informe o item que deseja alterar");
+					fachada.procurarInsumo(in.next());
+					System.out.println("Informe item e quantidade para alterar");
 					insumos.setNome(in.next());
 					insumos.setQuantidade(in.nextInt());
 					try {
@@ -379,6 +386,9 @@ public class InterfaceUsuario {
 					}
 				} else if (escolha.equals("Alterar")) {
 					System.out.println("Informe o produto a ser alterado");
+					fachada.procurarCultivo(in.next());
+					System.out.println(
+							"Insira o  produto, quantidade, agrotoxico(Sim/ Nao), tipo de irrigacao e qualidade da colheita");
 					cultivos.setProduto(in.next());
 					cultivos.setQuantidade(in.nextInt());
 					String controlado = in.next();
@@ -400,7 +410,7 @@ public class InterfaceUsuario {
 				break;
 			}
 			}
-		//in.nextLine();
+			in.nextLine();
 			}
 	}
 

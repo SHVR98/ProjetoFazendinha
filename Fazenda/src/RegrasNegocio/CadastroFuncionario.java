@@ -16,7 +16,7 @@ public class CadastroFuncionario {
 	}
 
 	public void inserirFuncionario(Funcionario funcionario) throws FuncionarioJaCadastradoException, SalarioInvalidoException {
-		if (funcionarios.existeFuncionario(funcionario.getNome())) {
+		if (this.funcionarios.existeFuncionario(funcionario.getNome())) {
 			throw new FuncionarioJaCadastradoException();
 		} else {
 			if(funcionario.getSalario() <= 0) {
@@ -30,7 +30,7 @@ public class CadastroFuncionario {
 	}
 
 	public void atualizarFuncionario(Funcionario funcionario) throws FuncionarioNaoEncontradoException {
-		if (funcionarios.existeFuncionario(funcionario.getNome())) {
+		if (this.funcionarios.existeFuncionario(funcionario.getNome())) {
 			funcionarios.atualizarFuncionario(funcionario);
 		} else {
 			throw new FuncionarioNaoEncontradoException();
@@ -38,7 +38,7 @@ public class CadastroFuncionario {
 	}
 
 	public void removerFuncionario(String nome) throws FuncionarioNaoEncontradoException {
-		if (funcionarios.existeFuncionario(nome)) {
+		if (this.funcionarios.existeFuncionario(nome)) {
 			funcionarios.removerFuncionario(nome);
 			quantidadeFuncionarios--;
 		} else {
@@ -47,7 +47,7 @@ public class CadastroFuncionario {
 	}
 
 	public Funcionario procurarFuncionario(String nome) throws FuncionarioNaoEncontradoException {
-		if (funcionarios.existeFuncionario(nome)) {
+		if (this.funcionarios.existeFuncionario(nome)) {
 			return funcionarios.procurarFuncionario(nome);
 		} else {
 			throw new FuncionarioNaoEncontradoException();

@@ -15,7 +15,7 @@ public class CadastroGado {
 	}
 	
 	public void inserirGado(Gado gado) throws GadoJaCadastradoException {
-		if (!gados.existeGado(gado.getBrinco())) {
+		if (!this.gados.existeGado(gado.getBrinco())) {
 			gados.inserirGado(gado);
 			quantidadeGados++;
 		} else {
@@ -24,7 +24,7 @@ public class CadastroGado {
 	}
 
 	public void removerGado(String brinco) throws GadoNaoExisteException {
-		if (gados.existeGado(brinco)) {
+		if (this.gados.existeGado(brinco)) {
 			gados.removerGado(brinco);
 			quantidadeGados--;
 		} else {
@@ -33,7 +33,7 @@ public class CadastroGado {
 	}
 
 	public Gado procurarGado(String brinco) throws GadoNaoExisteException {
-		if (gados.existeGado(brinco)) {
+		if (this.gados.existeGado(brinco)) {
 			return gados.procurarGado(brinco);
 		} else {
 			throw new GadoNaoExisteException();
@@ -42,7 +42,7 @@ public class CadastroGado {
 	}
 
 	public void atualizarGado(Gado gado) throws GadoNaoExisteException {
-		if (gados.existeGado(gado.getBrinco())) {
+		if (this.gados.existeGado(gado.getBrinco())) {
 			gados.atualizarGado(gado);
 		} else {
 			throw new GadoNaoExisteException();

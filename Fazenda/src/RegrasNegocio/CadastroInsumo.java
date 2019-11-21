@@ -14,7 +14,7 @@ public class CadastroInsumo {// classse de regra de negocio
 	}
 
 	public void inserirInsumo(Insumo insumo) throws InsumoJaCadastradoException {
-		if (insumos.existeInsumo(insumo.getNome())) {
+		if (this.insumos.existeInsumo(insumo.getNome())) {
 			throw new InsumoJaCadastradoException();
 		} else {
 			insumos.inserirInsumo(insumo);
@@ -22,7 +22,7 @@ public class CadastroInsumo {// classse de regra de negocio
 	}
 
 	public void removerInsumo(Insumo insumo) throws InsumoNaoCadastradoException {
-		if (insumos.existeInsumo(insumo.getNome())) {
+		if (this.insumos.existeInsumo(insumo.getNome())) {
 			insumos.removerInsumo(insumo);
 		} else {
 			throw new InsumoNaoCadastradoException();
@@ -30,7 +30,7 @@ public class CadastroInsumo {// classse de regra de negocio
 	}
 
 	public Insumo procurarInsumo(String item) throws InsumoNaoCadastradoException {
-		if (insumos.existeInsumo(item)) {
+		if (this.insumos.existeInsumo(item)) {
 			return insumos.procurarInsumo(item);
 		} else {
 			throw new InsumoNaoCadastradoException();
@@ -38,7 +38,7 @@ public class CadastroInsumo {// classse de regra de negocio
 	}
 
 	public void alterarInsumo(Insumo insumo) throws InsumoNaoCadastradoException {
-		if (insumos.existeInsumo(insumo.getNome())) {
+		if (this.insumos.existeInsumo(insumo.getNome())) {
 			insumos.alterarInsumo(insumo);
 		} else {
 			throw new InsumoNaoCadastradoException();
