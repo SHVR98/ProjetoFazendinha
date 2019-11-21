@@ -1,0 +1,199 @@
+Cultivo:
+Inserir um novo cultivo >>>>>>
+
+Cultivo
+Inserir
+Sorgo
+40
+sim
+normal
+10
+
+Procurar  cultivo existente >>>>>>>
+
+Cultivo
+Procurar
+Sorgo
+
+Procurar  cultivo não existente >>>>>>> Exception
+
+Cultivo
+Procurar
+Vaca
+
+Inserir um cultivo já existente >>>>>> Exception Cultivo já cadastrado
+Cultivo
+Inserir
+Sorgo
+4
+sim
+normal
+10
+
+Cultivo
+Inserir
+Sorgo
+40
+sim
+normal
+10
+
+Exceptions - Gado ja cadastrado
+--------------------------------------------------------------
+Funcionarios
+Inserir
+Wilson
+123
+123
+123
+123
+123
+Gado de Corte
+Inserir
+123
+M
+Nelore
+Sim
+1999
+30000
+Gado de Corte
+Inserir
+123
+M
+Nelore
+Sim
+1999
+30000
+
+--------------------------------------------------------------------------------------------------------
+
+Exceptions - Excesso de Gados
+---------------------------------------------------------------
+Gado de Corte
+Inserir
+123
+M
+Angus
+Sim
+9999
+333
+--------------------------------------------------------------------------
+Exception Gado não encontrado!
+---------------------------------------------------------------------------
+Funcionarios
+Inserir
+Wilson
+123
+123
+123
+123
+123
+Gado de Corte
+Inserir
+123
+M
+Nelore
+Sim
+1999
+30000
+Gado de Corte
+Remover
+321
+
+Funcionarios
+Inserir
+Wilson
+123
+123
+123
+123
+123
+Gado de Corte
+Inserir
+123
+M
+Nelore
+Sim
+1999
+30000
+Gado de Corte
+Procurar
+321
+
+Funcionarios
+Inserir
+Wilson
+123
+123
+123
+123
+123
+Gado de Corte
+Inserir
+123
+M
+Nelore
+Sim
+1999
+30000
+Gado de Corte
+Alterar
+321
+
+------------------------------------------
+inserir gados:
+666 m Cavalo Sim 2019
+
+inserir Insunos:
+luvas
+12
+luvas
+12
+
+remover Insumos:
+martelo
+5
+
+procurar Insumos:
+enchada
+
+alterar Insumos:
+bota
+12
+-----------------------
+
+Funcionarios
+Inserir
+Wilson
+123
+123
+123
+123
+123
+Funcionarios
+Inserir
+Wilson
+123
+123
+123
+123
+123
+
+Funcionarios
+Remover
+Wilson
+
+
+Funcionarios
+Procurar
+Wilson
+
+
+Funcionarios
+Alterar
+Wilson
+123
+123
+123
+123
+123
