@@ -38,7 +38,7 @@ public Gado(String brinco, char genero, String raca,boolean vacina,int anoNascim
 		this.raca = raca;
 	}
 
-	public boolean isVacina() {
+	public boolean getVacina() {
 		return this.vacina;
 	}
 

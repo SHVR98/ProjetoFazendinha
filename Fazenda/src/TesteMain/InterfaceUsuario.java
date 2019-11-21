@@ -33,10 +33,11 @@ public class InterfaceUsuario {
 		GadoReproducao gadoReproducao = new GadoReproducao(" ", ' ', " ", false, 0);
 		Funcionario funcionarios = new Funcionario();
 		Insumo insumos = new Insumo(" ", 0);
-		Cultivo cultivos = new Cultivo(" ", 0, false, 0, 0);
+		Cultivo cultivos = new Cultivo(" ", 0, false, " ", " ");
 
 //		 FachadaFazenda fachada = new FachadaFazenda(gadosRepArray,funcionariosRepArray, insumosRepArray, cultivosRepArray); // Inserindo em arrays
-		FachadaFazenda fachada = new FachadaFazenda(gadosRepLista, funcionariosRepLista, insumosRepLista,cultivosRepLista);
+		FachadaFazenda fachada = new FachadaFazenda(gadosRepLista, funcionariosRepLista, insumosRepLista,
+				cultivosRepLista);
 		while (continuar) {
 			System.out.println("Informe o que area da fazeznda deseja trabalhar:");
 			System.out.println("Gado de Corte - Gado de Reproducao - Funcionarios - Insumos - Cultivo");
@@ -89,6 +90,16 @@ public class InterfaceUsuario {
 
 					try {
 						fachada.procurarGado(brinco);
+						Gado gado = fachada.procurarGado(brinco);
+						System.out.printf(" Brinco %s\n Genero %c\n Raca %s\n Ano Nascimento %d\n Peso %f\n Fertilidade %s\n",
+								gado.getBrinco(), gado.getGenero(), gado.getRaca(), gado.getAnoNascimento(),
+								gadoCorte.getPeso(),gadoReproducao.getFertilidade());
+						if (gado.getVacina()) {
+							System.out.println("Vacina Sim");
+
+						} else
+							System.out.println("Vacina Nao");
+
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -165,6 +176,14 @@ public class InterfaceUsuario {
 
 					try {
 						fachada.procurarGado(brinco);
+						Gado gado = fachada.procurarGado(brinco);
+						System.out.printf(" Brinco %s\n Genero %c\n Raca %s\n Ano Nascimento %d\n", gado.getBrinco(),
+								gado.getGenero(), gado.getRaca(), gado.getAnoNascimento());
+						if (gado.getVacina()) {
+							System.out.println("Vacina Sim");
+
+						} else
+							System.out.println("Vacina Nao");
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -228,7 +247,11 @@ public class InterfaceUsuario {
 					String nome = in.next();
 
 					try {
-						fachada.removerFuncionario(nome);
+						fachada.procurarFuncionario(nome);
+						Funcionario funcionario = fachada.procurarFuncionario(nome);
+						System.out.printf(" Nome %s\n Contato %s\n Endereco %s\n Funcao %s\n Salario %s\n",
+								funcionario.getNome(), funcionario.getContato(), funcionario.getEndereco(),
+								funcionario.getFuncao(), funcionario.getSalario());
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -259,7 +282,7 @@ public class InterfaceUsuario {
 					insumos.setQuantidade(in.nextInt());
 
 					try {
-						fachada.alterarInsumo(insumos);
+						fachada.inserirInsumo(insumos);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -279,6 +302,9 @@ public class InterfaceUsuario {
 					String item = in.next();
 					try {
 						fachada.procurarInsumo(item);
+						Insumo insumo = fachada.procurarInsumo(item);
+						System.out.printf(" Nome %s\n Quantidade %d", insumo.getNome(), insumo.getQuantidade());
+
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -300,8 +326,7 @@ public class InterfaceUsuario {
 				System.out.println("Inserir - Remover - Procurar - Alterar");
 				escolha = in.next();
 				if (escolha.equals("Inserir")) {
-					System.out.println(
-							"Insira o  produto, quantidade, agrotoxico (Sim / Nao), irrigacao e colheita");
+					System.out.println("Insira o  produto, quantidade, agrotoxico (Sim / Nao), irrigacao e colheita");
 					cultivos.setProduto(in.next());
 					cultivos.setQuantidade(in.nextInt());
 					String controlado = in.next();
@@ -310,8 +335,8 @@ public class InterfaceUsuario {
 					} else {
 						cultivos.setControlePraga(false);
 					}
-					cultivos.setIrrigacao(in.nextInt());
-					cultivos.setColheita(in.nextInt());
+					cultivos.setIrrigacao(in.next());
+					cultivos.setColheita(in.next());
 
 					try {
 						fachada.inserirCultivo(cultivos);
@@ -319,7 +344,8 @@ public class InterfaceUsuario {
 						e.printStackTrace();
 					}
 				} else if (escolha.equals("Remover")) {
-					System.out.println("Insira o  produto, quantidade, agrotoxico(Sim/ Nao), irrigacao e colheita");
+					System.out.println(
+							"Insira o  produto, quantidade, agrotoxico(Sim/ Nao), tipo de irrigacao e qualidade da colheita");
 					cultivos.setProduto(in.next());
 					cultivos.setQuantidade(in.nextInt());
 					String controlado = in.next();
@@ -328,8 +354,8 @@ public class InterfaceUsuario {
 					} else {
 						cultivos.setControlePraga(false);
 					}
-					cultivos.setIrrigacao(in.nextInt());
-					cultivos.setColheita(in.nextInt());
+					cultivos.setIrrigacao(in.next());
+					cultivos.setColheita(in.next());
 					try {
 						fachada.removerCultivo(cultivos);
 					} catch (Exception e) {
@@ -340,6 +366,15 @@ public class InterfaceUsuario {
 					String produto = in.next();
 					try {
 						fachada.procurarCultivo(produto);
+						Cultivo cultivo = fachada.procurarCultivo(produto);
+						System.out.printf(" Produto %s\n Quantidade %d\n Irrigacao %s\n Colheita %s",
+								cultivo.getProduto(), cultivo.getQuantidade(), cultivo.getIrrigacao(),
+								cultivo.getColheita());
+						if (cultivo.getControlePraga())
+							System.out.println("Controle de Pragas Sim");
+						else
+							System.out.println("Controle de Pragas Nao");
+
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -353,8 +388,8 @@ public class InterfaceUsuario {
 					} else {
 						cultivos.setControlePraga(false);
 					}
-					cultivos.setIrrigacao(in.nextInt());
-					cultivos.setColheita(in.nextInt());
+					cultivos.setIrrigacao(in.next());
+					cultivos.setColheita(in.next());
 
 					try {
 						fachada.alterarCultivo(cultivos);
@@ -366,12 +401,7 @@ public class InterfaceUsuario {
 				break;
 			}
 			}
-			System.out.println("Deseja Continuar? Sim ou Nao");
-			String continua=in.nextLine();
-			if (continua.equals("Nao"))
-				continuar = false;
-
-		}
+		in.nextLine();}
 	}
 
 }

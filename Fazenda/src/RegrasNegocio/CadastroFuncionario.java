@@ -46,9 +46,9 @@ public class CadastroFuncionario {
 		}
 	}
 
-	public void procurarFuncionario(String nome) throws FuncionarioNaoEncontradoException {
+	public Funcionario procurarFuncionario(String nome) throws FuncionarioNaoEncontradoException {
 		if (funcionarios.existeFuncionario(nome)) {
-			funcionarios.procurarFuncionario(nome);
+			return funcionarios.procurarFuncionario(nome);
 		} else {
 			throw new FuncionarioNaoEncontradoException();
 		}

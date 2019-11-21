@@ -72,8 +72,8 @@ public class FachadaFazenda {
 		funcionarios.removerFuncionario(nome);
 	}
 
-	public void procurarFuncionario(String nome) throws FuncionarioNaoEncontradoException {
-		funcionarios.procurarFuncionario(nome);
+	public Funcionario procurarFuncionario(String nome) throws FuncionarioNaoEncontradoException {
+		return funcionarios.procurarFuncionario(nome);
 	}
 
 	// CULTIVO

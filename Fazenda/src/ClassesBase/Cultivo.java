@@ -2,15 +2,13 @@ package ClassesBase;
 
 public class Cultivo {
 
-	//sorgo e organicos
-	private String produto; //nome do produto cultivado
-	private int quantidade; //quantidade cultivada
-	//private String tipo; //sorgo ou organico?
+	private String produto; 
+	private int quantidade; 
 	private boolean controlePraga;
-	private int irrigacao;
-	private int colheita;
+	private String irrigacao;
+	private String colheita;
 	
-	public Cultivo (String produto, int quantidade, boolean controlePraga, int irrigacao, int colheita){
+	public Cultivo (String produto, int quantidade, boolean controlePraga, String irrigacao, String colheita){
 		this.produto = produto;
 		this.quantidade = quantidade;
 		this.controlePraga = controlePraga;
@@ -35,16 +33,16 @@ public class Cultivo {
 	public void setControlePraga(boolean controlePraga) {
 		this.controlePraga = controlePraga;
 	}
-	public int getIrrigacao(){
+	public String getIrrigacao(){
 		return irrigacao;
 	}
-	public void setIrrigacao(int irrigacao) {
+	public void setIrrigacao(String irrigacao) {
 		this.irrigacao = irrigacao;
 	}
-	public int getColheita(){
+	public String getColheita(){
 		return colheita;
 	}
-	public void setColheita(int colheita) {
+	public void setColheita(String colheita) {
 		this.colheita = colheita;
 	}
 
