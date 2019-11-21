@@ -35,9 +35,8 @@ public class InterfaceUsuario {
 		Insumo insumos = new Insumo(" ", 0);
 		Cultivo cultivos = new Cultivo(" ", 0, false, " ", " ");
 
-//		 FachadaFazenda fachada = new FachadaFazenda(gadosRepArray,funcionariosRepArray, insumosRepArray, cultivosRepArray); // Inserindo em arrays
-		FachadaFazenda fachada = new FachadaFazenda(gadosRepLista, funcionariosRepLista, insumosRepLista,
-				cultivosRepLista);
+		 //FachadaFazenda fachada = new FachadaFazenda(gadosRepArray,funcionariosRepArray, insumosRepArray, cultivosRepArray); // Inserindo em arrays
+		FachadaFazenda fachada = new FachadaFazenda(gadosRepLista, funcionariosRepLista, insumosRepLista,cultivosRepLista);
 		while (continuar) {
 			System.out.println("Informe o que area da fazeznda deseja trabalhar:");
 			System.out.println("Gado de Corte - Gado de Reproducao - Funcionarios - Insumos - Cultivo");
@@ -401,7 +400,8 @@ public class InterfaceUsuario {
 				break;
 			}
 			}
-		in.nextLine();}
+		//in.nextLine();
+			}
 	}
 
 }

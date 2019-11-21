@@ -60,7 +60,7 @@ public class RepositorioInsumosArray implements RepositorioInsumos
 		boolean resposta = false;
 		for(int i=0; i<array.length; i++)
 		{
-			if(this.array[i].getNome() == item)
+			if(this.array[i]!= null &&this.array[i].getNome() == item)
 			{
 				i = array.length+1;		// caso entre , atende o criterio de parada, com i sendo maior que o array
 				resposta = true;
